@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CookieGuard Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css">
+  <script src="d3.v7.min.js"></script>
+</head>
+<body>
+  <div class="dashboard">
+    <header>
+      <h1>🍪 CookieGuard Dashboard</h1>
+      <p>Comprehensive cookie analytics and privacy insights</p>
+    </header>
+
+    <div class="stats-overview">
+      <div class="stat-box">
+        <div class="stat-value" id="overview-total">0</div>
+        <div class="stat-label">Total Cookies</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-value" id="overview-domains">0</div>
+        <div class="stat-label">Unique Domains</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-value" id="overview-trackers">0</div>
+        <div class="stat-label">Trackers Detected</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-value" id="overview-score">--</div>
+        <div class="stat-label">Privacy Score</div>
+      </div>
+    </div>
+
+    <div class="charts-grid">
+      <div class="chart-container">
+        <h2>Cookie Distribution by Category</h2>
+        <div id="pie-chart"></div>
+      </div>
+
+      <div class="chart-container">
+        <h2>Top 10 Cookie Domains</h2>
+        <div id="bar-chart"></div>
+      </div>
+
+      <div class="chart-container full-width">
+        <h2>Cookie Timeline (Last 24 Hours)</h2>
+        <div id="timeline-chart"></div>
+      </div>
+
+      <div class="chart-container full-width">
+        <h2>Cookie Details</h2>
+        <div class="table-controls">
+          <input type="text" id="search-input" placeholder="Search cookies...">
+          <select id="category-filter">
+            <option value="">All Categories</option>
+            <option value="essential">Essential</option>
+            <option value="functional">Functional</option>
+            <option value="analytics">Analytics</option>
+            <option value="advertising">Advertising</option>
+            <option value="social">Social</option>
+            <option value="unknown">Unknown</option>
+          </select>
+        </div>
+        <div id="cookie-table"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="dashboard-fixed.js"></script>
+</body>
+</html>
